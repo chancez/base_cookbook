@@ -12,6 +12,7 @@ include_recipe "vim"
 include_recipe "zsh"
 include_recipe "python"
 include_recipe "users"
+include_recipe "openssh"
 include_recipe "build-essential"
 include_recipe "docker"
 
@@ -20,3 +21,4 @@ node['vps']['packages'].each do |pkg|
     action :install
   end
 end
+
