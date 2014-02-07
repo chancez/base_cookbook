@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
     chef.validation_client_name = "chance-validator"
     chef.validation_key_path = "#{ENV['HOME']}/.chef/chance-validator.pem"
     chef.client_key_path = "#{ENV['HOME']}/.chef/ecnahc515.pem"
-    chef.node_name = "vps-cookbook"
+    chef.node_name = "base-cookbook"
 
     # chef.delete_node = true
     # chef.delete_client = true
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
     }
 
     chef.run_list = [
-      "recipe[vps]"
+      "recipe[base::default]"
     ]
   end
 end
